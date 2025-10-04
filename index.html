@@ -3,59 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarix Kursi</title>
+  <title>Tarix Kursi - O‘quv markazi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { margin:0; font-family:Arial, sans-serif; background:#fdfcf8; color:#333; }
-    header { background:#d4af37; padding:20px; text-align:center; color:white; }
-    section { padding:60px 20px; text-align:center; }
-    h1, h2 { color:#d4af37; }
-    form { max-width:500px; margin:30px auto; display:flex; flex-direction:column; gap:15px; }
-    input, textarea {
-      padding:14px;
-      border:1px solid #ccc;
-      border-radius:8px;
-      font-size:16px;
-    }
-    button {
-      background:#d4af37;
-      color:white;
-      padding:14px;
-      border:none;
-      border-radius:8px;
-      font-size:18px;
-      cursor:pointer;
-      transition:0.3s;
-    }
-    button:hover { background:#b9972b; }
-    footer { background:#333; color:white; text-align:center; padding:15px; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Poppins', sans-serif; line-height:1.6; color:#2c3e50; background:#fafafa; }
+
+    header { background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581091870675-6dc4b18d90fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; color:white; text-align:center; padding:80px 20px; }
+    header h1 { font-size:2.5rem; margin-bottom:15px; color:#f1c40f; }
+    header p { font-size:1.2rem; margin-bottom:25px; }
+    .cta-btn { background:#f1c40f; color:#2c3e50; padding:15px 30px; border-radius:30px; font-weight:600; text-decoration:none; transition:0.3s; }
+    .cta-btn:hover { background:#d4ac0d; color:white; }
+
+    section { max-width:1000px; margin:60px auto; padding:0 20px; }
+    section h2 { text-align:center; color:#f1c40f; font-size:2rem; margin-bottom:20px; }
+    section p { text-align:center; margin-bottom:20px; }
+
+    .features { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-top:30px; }
+    .feature-box { background:white; padding:25px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; }
+    .feature-box h3 { color:#2c3e50; margin-bottom:10px; }
+
+    .pricing { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:30px; }
+    .price-card { background:white; border:2px solid #f1c40f; border-radius:15px; padding:30px; width:300px; text-align:center; transition:0.3s; }
+    .price-card:hover { transform:translateY(-5px); box-shadow:0 6px 12px rgba(0,0,0,0.15); }
+    .price-card h3 { margin-bottom:15px; }
+    .price-card p { margin-bottom:20px; }
+    .price-card .cta-btn { display:inline-block; }
+
+    iframe { border:none; border-radius:10px; width:100%; height:500px; }
+
+    footer { background:#2c3e50; color:white; text-align:center; padding:25px; margin-top:60px; }
+    footer a { color:#f1c40f; text-decoration:none; }
   </style>
 </head>
 <body>
-
+  <!-- HERO SECTION -->
   <header>
-    <h1>Tarix Kursiga Xush Kelibsiz</h1>
-    <p>15 yillik tajribaga ega ustoz bilan tarixni chuqur o‘rganing!</p>
+    <h1>Tarix Kursi — Olimpiada va Imtihonlarga Tayyorlaning</h1>
+    <p>15 yillik tajribaga ega ustozdan, 8 nafar o‘quvchisi Respublika Olimpiadasi finalchisidir</p>
+    <a href="#royxat" class="cta-btn">Ro‘yxatdan o‘tish</a>
   </header>
 
+  <!-- ABOUT SECTION -->
   <section>
     <h2>Kurs haqida</h2>
-    <p>Tarix fanidan 2 soatlik amaliy darslar, olimpiadachilarni tayyorlash tajribasiga ega ustoz.</p>
+    <div class="features">
+      <div class="feature-box">
+        <h3>📚 2 soatlik interaktiv darslar</h3>
+        <p>Har bir dars — chuqur tarixiy mavzular va savol-javob shaklida o‘tadi.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🎓 15 yillik tajriba</h3>
+        <p>Ustoz — tajribali pedagog, respublika olimpiadalarida o‘quvchilari bilan natijalarga erishgan.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🏆 Muvaffaqiyat kafolati</h3>
+        <p>8 nafar o‘quvchisi respublika olimpiadasi finalchisiga aylangan.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="register" style="background:#fff8e1;">
+  <!-- PRICING SECTION -->
+  <section>
+    <h2>Narxlar</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <h3>Standart paket</h3>
+        <p>$120 — 2 oy kurs + sertifikat</p>
+        <a href="#royxat" class="cta-btn">Ro‘yxatdan o‘tish</a>
+      </div>
+      <div class="price-card">
+        <h3>Premium paket</h3>
+        <p>$170 — Kurs + Sertifikat + Yakka konsultatsiya</p>
+        <a href="#royxat" class="cta-btn">Ro‘yxatdan o‘tish</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION SECTION -->
+  <section id="royxat">
     <h2>Ro‘yxatdan o‘ting</h2>
-    <form name="tarix-kurs-royxat" method="POST" data-netlify="true">
-      <input type="text" name="Ism" placeholder="Ismingiz" required>
-      <input type="email" name="Email" placeholder="Email manzilingiz" required>
-      <input type="tel" name="Telefon" placeholder="Telefon raqamingiz" required>
-      <textarea name="Xabar" placeholder="Qo‘shimcha xabar (ixtiyoriy)" rows="4"></textarea>
-      <button type="submit">Yuborish</button>
+    <p>Ismingiz va telefon raqamingizni qoldiring, biz tez orada siz bilan bog‘lanamiz.</p>
+
+    <form name="tarix-kurs-royxat" method="POST" data-netlify="true" style="max-width:500px; margin:30px auto; display:flex; flex-direction:column; gap:15px;">
+      <input type="text" name="Ism" placeholder="Ismingiz" required style="padding:14px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+      <input type="tel" name="Telefon" placeholder="Telefon raqamingiz" required style="padding:14px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+      <input type="email" name="Email" placeholder="Email (ixtiyoriy)" style="padding:14px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+      <textarea name="Xabar" placeholder="Qo‘shimcha xabar (ixtiyoriy)" rows="4" style="padding:14px; border:1px solid #ccc; border-radius:8px; font-size:16px;"></textarea>
+      <button type="submit" style="background:#f1c40f; color:#2c3e50; font-weight:600; padding:14px; border:none; border-radius:8px; font-size:18px; cursor:pointer; transition:0.3s;">
+        Yuborish
+      </button>
     </form>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 O‘quv Markazi. Barcha huquqlar himoyalangan.</p>
+    <p>© 2025 O‘quv markazi | Telefon: <a href="tel:+998901234567">+998 90 123 45 67</a></p>
   </footer>
-
 </body>
 </html>
