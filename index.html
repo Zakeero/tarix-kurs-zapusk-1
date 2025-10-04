@@ -81,17 +81,102 @@
   </section>
 
   <!-- REGISTRATION SECTION -->
-  <section id="royxat">
+<section id="royxat" style="margin:60px auto; max-width:500px; padding:20px;">
+  <div class="form-container">
     <h2>Ro‘yxatdan o‘ting</h2>
     <p>Ismingiz va telefon raqamingizni qoldiring, biz tez orada siz bilan bog‘lanamiz.</p>
 
-    <form name="tarix-kurs-royxat" method="POST" data-netlify="true">
-  <input type="text" name="ism" placeholder="Ismingiz" required>
-  <input type="text" name="telefon" placeholder="Telefon raqamingiz" required>
-  <button type="submit">Ro‘yxatdan o‘tish</button>
-</form>
+    <form name="tarix-kurs-royxat" method="POST" data-netlify="true" id="signupForm">
+      <input type="hidden" name="form-name" value="tarix-kurs-royxat">
+      <input type="text" name="ism" placeholder="Ismingiz" required>
+      <input type="text" name="telefon" placeholder="Telefon raqamingiz" required>
+      <button type="submit">Ro‘yxatdan o‘tish</button>
+    </form>
 
-  </section>
+    <div class="success-message" id="successMessage">
+      ✅ Ma'lumotlaringiz qabul qilindi. Tez orada sizga bog'lanamiz!
+    </div>
+  </div>
+</section>
+
+<style>
+  .form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .form-container h2 {
+    color: #f1c40f;
+    margin-bottom: 10px;
+  }
+
+  .form-container p {
+    margin-bottom: 20px;
+    color: #555;
+  }
+
+  .form-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .form-container button {
+    width: 100%;
+    padding: 14px;
+    background: #f1c40f;
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .form-container button:hover {
+    background: #d4ac0d;
+    color: white;
+  }
+
+  .success-message {
+    display: none;
+    margin-top: 15px;
+    padding: 12px;
+    background: #eaf9ea;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+  }
+</style>
+
+<script>
+  const form = document.getElementById("signupForm");
+  const successMessage = document.getElementById("successMessage");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: formData,
+    })
+    .then(() => {
+      form.style.display = "none"; 
+      successMessage.style.display = "block";
+    })
+    .catch((error) => alert("Xatolik yuz berdi: " + error));
+  });
+</script>
+
 
   <!-- FOOTER -->
   <footer>
